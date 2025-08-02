@@ -1,0 +1,19 @@
+name: web
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ROOT_HOST: ${MYSQL_ROOT_HOST}
+    volumes:
+      - mysql-config:/etc/mysql
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-config:
+  mysql-data:

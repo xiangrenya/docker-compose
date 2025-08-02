@@ -1,0 +1,16 @@
+name: web
+
+services:
+  postgis:
+    image: postgis/postgis:15-3.5
+    container_name: postgis
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgis-data:/var/lib/postgresql/data
+
+volumes:
+  postgis-data:
