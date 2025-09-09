@@ -1,10 +1,13 @@
+name: web
+
 services:
   aliyun-ddns:
     image: chenhw2/aliyun-ddns-cli
+    container_name: aliyun-ddns
     restart: always
     environment:
-      - AKID=${ALIYUN_ACCESS_KEY_ID}
-      - AKSCT=${ALIYUN_ACCESS_KEY_SECRET}
+      - AKID=${ACCESS_KEY_ID}
+      - AKSCT=${ACCESS_KEY_SECRET}
       - DOMAIN=xiangrenya.xyz
       - REDO=600
       - TTL=600
